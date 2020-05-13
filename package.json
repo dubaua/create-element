@@ -1,14 +1,30 @@
 {
-  "name": "create-element",
-  "version": "1.0.0",
+  "name": "@dubaua/create-element",
+  "version": "0.0.1",
   "description": "simple javascript render function and reference binder",
-  "main": "index.js",
-  "repository": "git@github.com:dubaua/createElement.git",
+  "source": "index.js",
+  "main": "dist/create-element.min.js",
+  "umd:main": "dist/create-element.umd.js",
+  "module": "dist/create-element.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dubaua/createElement.git"
+  },
   "author": "Vladimir Lysov",
   "email": "dubaua@gmail.com",
   "license": "MIT",
   "keywords": [
     "render",
     "js"
-  ]
+  ],
+  "scripts": {
+    "build": "microbundle --strict"
+  },
+  "bugs": {
+    "url": "https://github.com/dubaua/createElement/issues"
+  },
+  "homepage": "https://github.com/dubaua/createElement#readme",
+  "devDependencies": {
+    "microbundle": "^0.12.0"
+  }
 }

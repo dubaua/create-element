@@ -33,7 +33,22 @@ const NAMESPACED_ATTRIBUTES = {
   'xlink:href': 'http://www.w3.org/1999/xlink',
 };
 
-function create(tagAndClass, { style, listeners, attributes, ref, domProps, dataset } = {}, children) {
+function bindReference(target, key, link) {
+  if (!link) {
+    return bindReference.bind(this, target, key);
+  }
+  target[key] = link;
+}
+
+/**
+ * Creates a node with given parameters
+ * @param {string} tagAndClass - tag and optional dot separated classnames
+ * @param {Object} [options={}] - options
+ * @param {Array|String} children - children or string
+ * @return {*} a node
+ */
+
+function createElement(tagAndClass, { style, listeners, attributes, ref, domProps, dataset } = {}, children) {
   // extract classlist from tag name
   const [tagName, ...classList] = tagAndClass.split('.');
 
@@ -112,11 +127,4 @@ function create(tagAndClass, { style, listeners, attributes, ref, domProps, data
   return nodeElement;
 }
 
-function bindReference(target, key, link) {
-  if (!link) {
-    return bindReference.bind(this, target, key);
-  }
-  target[key] = link;
-}
-
-export { create, bindReference };
+module.exports = createElement;
