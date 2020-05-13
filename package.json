@@ -1,6 +1,6 @@
 {
   "name": "@dubaua/create-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple javascript render function and reference binder",
   "source": "index.js",
   "main": "dist/create-element.min.js",
